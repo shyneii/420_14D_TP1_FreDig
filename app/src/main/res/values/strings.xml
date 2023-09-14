@@ -6,7 +6,9 @@
     <string name="ajoutJeton">Ajouter les jetons</string>
     <string name="paire">Paire</string>
     <string name="impaire">Impaire</string>
-    <string name="title_activity_acceuil">AcceuilActivity</string>
+    <string name="title_activity_acceuil">Acceuil</string>
+    <string name="title_activity_banque">Banque</string>
+    <string name="title_activity_roulette">Roulette</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

@@ -16,7 +16,20 @@
             android:name=".AcceuilActivity"
             android:exported="false"
             android:label="@string/title_activity_acceuil"
-            android:theme="@style/Theme._420_14D_TP1_FreDig" />
+            android:theme="@style/Theme._420_14D_TP1_FreDig"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".RouletteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_roulette"
+            android:theme="@style/Theme._420_14D_TP1_FreDig"
+            android:parentActivityName=".AcceuilActivity"/>
+        <activity
+            android:name=".BanqueActivity"
+            android:exported="false"
+            android:label="@string/title_activity_banque"
+            android:theme="@style/Theme._420_14D_TP1_FreDig"
+            android:parentActivityName=".AcceuilActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" >
