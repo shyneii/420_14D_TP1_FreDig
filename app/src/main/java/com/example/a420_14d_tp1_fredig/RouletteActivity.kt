@@ -15,13 +15,13 @@ class RouletteActivity : AppCompatActivity(){
         setContentView(R.layout.activity_roulette)
         btnJouerRoulette = findViewById(R.id.btnJouerRoulette)
         btnJouerRoulette.setOnClickListener {
-            //avoir le montant de jetons
             val sharedPreferences = getSharedPreferences("Comptes", MODE_PRIVATE)
             val jetons = sharedPreferences.getInt("jetons", 0)
-            //si le montant de jetons est plus grand que 0
             if (jetons > 0 ){
                 val editor = sharedPreferences.edit()
-                editor.putInt("jetons", jetons - 1)
+                var jetonsApresJeu = jetons - 1
+                editor.putInt("jetons", jetonsApresJeu)
+                editor.apply()
             }
         }
     }

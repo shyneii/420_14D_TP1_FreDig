@@ -1,6 +1,7 @@
 package com.example.a420_14d_tp1_fredig
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,10 @@ class AcceuilActivity : AppCompatActivity(){
         btnBanque = findViewById(R.id.btnBanque)
         val sharedPreferences = getSharedPreferences("Comptes", MODE_PRIVATE)
         txtAcceuil.text = "Bonjour ${sharedPreferences.getString("nom", "")}, vous avez ${sharedPreferences.getInt("jetons", 0)} jetons"
+        if (sharedPreferences.getInt("jetons", 0) == 0){
+            btnJouer.isEnabled = false
+            btnJouer.setTextColor(ColorStateList.valueOf(0xFF9E9E9E.toInt()))
+        }
         btnJouer.setOnClickListener {
             val intent = intent.setClass(this@AcceuilActivity, RouletteActivity::class.java)
             startActivity(intent)
