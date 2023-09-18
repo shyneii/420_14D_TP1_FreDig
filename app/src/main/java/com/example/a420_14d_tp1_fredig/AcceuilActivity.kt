@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.content.Intent
+import android.widget.Toast
 import org.w3c.dom.Text
 
 class AcceuilActivity : AppCompatActivity(){
@@ -20,17 +22,21 @@ class AcceuilActivity : AppCompatActivity(){
         btnJouer = findViewById(R.id.btnJouer)
         btnBanque = findViewById(R.id.btnBanque)
         val sharedPreferences = getSharedPreferences("Comptes", MODE_PRIVATE)
-        txtAcceuil.text = "Bonjour ${sharedPreferences.getString("nom", "")}, vous avez ${sharedPreferences.getInt("jetons", 0)} jetons"
-        if (sharedPreferences.getInt("jetons", 0) == 0){
-            btnJouer.isEnabled = false
-            btnJouer.setTextColor(ColorStateList.valueOf(0xFF9E9E9E.toInt()))
-        }
+        txtAcceuil.text = "${getString(R.string.accueil1)} ${sharedPreferences.getString("nom", "")}, ${getString(R.string.accueil2)} ${sharedPreferences.getInt("jetons", 0)} ${getString(R.string.accueil3)}"
+
         btnJouer.setOnClickListener {
-            val intent = intent.setClass(this@AcceuilActivity, RouletteActivity::class.java)
-            startActivity(intent)
+            if (sharedPreferences.getInt("jetons", 0) <= 0) {
+                Toast.makeText(this, "${getString(R.string.jetonsManquant)}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@AcceuilActivity, BanqueActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                val intent = Intent(this@AcceuilActivity, RouletteActivity::class.java)
+                startActivity(intent)
+            }
         }
         btnBanque.setOnClickListener {
-            val intent = intent.setClass(this@AcceuilActivity, BanqueActivity::class.java)
+            val intent = Intent(this@AcceuilActivity, BanqueActivity::class.java)
             startActivity(intent)
         }
     }

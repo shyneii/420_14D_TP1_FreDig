@@ -9,6 +9,17 @@
     <string name="title_activity_acceuil">Acceuil</string>
     <string name="title_activity_banque">Banque</string>
     <string name="title_activity_roulette">Roulette</string>
+    <string name="accueil1">Bonjour</string>
+    <string name="accueil2">vous avez</string>
+    <string name="accueil3">jetons</string>
+    <string name="nom">Nom</string>
+    <string name="mise">Mise</string>
+    <string name="numero">Numero</string>
+    <string name="jetonsManquant">Vous n\'avez plus de jetons</string>
+    <string name="nomManquant">Vous n\'avez pas entré de nom</string>
+    <string name="miseManquante">Vous n\'avez pas entré de mise</string>
+    <string name="miseTropGrande">Vous n\'avez pas assez de jetons</string>
+    <string name="erreurRoulette">Veuillez choisir une methode de jeu</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
